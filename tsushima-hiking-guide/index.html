@@ -1,0 +1,185 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10130f">
+  <meta name="description" content="A field guide to the forests, shrines, waterfalls, and quiet trails of Ghost of Tsushima.">
+  <title>Paths of Tsushima — A Field Guide</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=DM+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#explore">Skip to the map</a>
+  <header class="hero" id="top">
+    <div class="hero-shade" aria-hidden="true"></div>
+    <nav class="nav wrap" aria-label="Main navigation">
+      <a class="brand" href="#top" aria-label="Paths of Tsushima, home">
+        <span class="brand-mark" aria-hidden="true">風</span>
+        <span class="brand-name">PATHS <span>OF TSUSHIMA</span></span>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="nav-links" aria-label="Open navigation">
+        <span></span><span></span>
+      </button>
+      <div class="nav-links" id="nav-links">
+        <a href="#explore">The map</a>
+        <a href="#trails">Field notes</a>
+        <a class="nav-cta" href="#explore">Find a trail <span aria-hidden="true">↗</span></a>
+      </div>
+    </nav>
+
+    <div class="hero-copy wrap">
+      <p class="eyebrow"><span class="eyebrow-line"></span> A FIELD GUIDE TO THE ISLAND</p>
+      <h1>Let the wind<br>lead you <em>home.</em></h1>
+      <p class="hero-intro">Beyond the battlefield, an island of quiet trails, wild forests and sacred places is waiting to be found.</p>
+      <a class="primary-link" href="#explore">Explore the island <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="hero-caption"><span>TSUSHIMA ISLAND</span><span>34° 25′ N &nbsp; 129° 19′ E</span></div>
+    <a class="scroll-note" href="#intro"><span aria-hidden="true"></span> A SLOWER WAY THROUGH TSUSHIMA</a>
+  </header>
+
+  <main>
+    <section class="intro section wrap" id="intro">
+      <div class="intro-index">01 <span>/</span> THE ISLAND</div>
+      <div class="intro-copy">
+        <p class="eyebrow eyebrow-dark">TAKE THE SCENIC ROUTE</p>
+        <h2>Somewhere between<br>the <em>wind and the wild.</em></h2>
+      </div>
+      <p class="intro-note">Trade the beaten path for a winding climb to a shrine, a pause beneath golden leaves, or the hush of a hidden waterfall. This is Tsushima, best explored one quiet step at a time.</p>
+    </section>
+
+    <section class="explore section" id="explore">
+      <div class="section-heading wrap">
+        <div>
+          <p class="eyebrow eyebrow-dark">02 / YOUR FIELD MAP</p>
+          <h2>Find your <em>own way.</em></h2>
+        </div>
+        <p>Choose a marker or a place to uncover your next walk.</p>
+      </div>
+
+      <div class="map-layout wrap">
+        <div class="map-frame">
+          <div class="map-topline"><span>TSUSHIMA · LAND OF THE KAMI</span><span>FIELD MAP &nbsp; 01—06</span></div>
+          <div class="map-canvas" role="group" aria-label="Illustrated map of Tsushima. Select a numbered marker to explore a place.">
+            <svg class="island-map" viewBox="0 0 900 560" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+              <defs>
+                <pattern id="map-grain" width="7" height="7" patternUnits="userSpaceOnUse">
+                  <circle cx="1" cy="2" r=".7" fill="#746a50" opacity=".23"/>
+                </pattern>
+                <pattern id="contour-lines" width="150" height="110" patternUnits="userSpaceOnUse">
+                  <path d="M-35 63C-4 22 45 16 71 45s62 44 110 5M-27 74C8 37 43 34 69 57s65 42 117 12M-17 87c32-31 59-31 82-13s68 36 117 17" fill="none" stroke="#677153" stroke-width="1" opacity=".42"/>
+                </pattern>
+                <clipPath id="island-shape">
+                  <path d="M425 36c58 17 76 47 92 88 15 40 47 51 47 92 0 31 35 51 30 90-3 31 29 46 23 82-7 41-31 58-23 97 8 36-18 53-45 37-22-14-45-7-64 16-20 25-44 4-59-16-13-18-36-19-57-7-25 14-40-6-49-27-14-32-45-33-66-45-27-15-29-46-10-67 19-23 8-53-13-69-25-20-21-49 3-65 24-15 30-47 20-75-12-35 7-62 43-64 37-3 69-23 84-52 12-25 25-29 44-15Z"/>
+                </clipPath>
+              </defs>
+              <rect width="900" height="560" fill="#e8e3d0"/>
+              <g class="map-sea-lines" fill="none" stroke="#b9c0b1" stroke-width="1" opacity=".56">
+                <path d="M-20 111c111-32 192 8 280-11s124-66 228-45 148 42 241 14 139-30 203-3"/>
+                <path d="M-40 130c120-36 203 6 289-12s123-63 237-39 145 41 235 14 142-29 213-2"/>
+                <path d="M-20 460c106-31 182 12 269-8s142-68 231-49 168 42 258 13 126-29 190-9"/>
+              </g>
+              <g clip-path="url(#island-shape)">
+                <rect width="900" height="560" fill="#c5c9a6"/>
+                <rect width="900" height="560" fill="url(#contour-lines)"/>
+                <rect width="900" height="560" fill="url(#map-grain)" opacity=".62"/>
+                <path d="M310 30c78 89 70 149 133 188s34 95 79 132 14 99 83 161l-79 81-283-62-59-182 57-191Z" fill="#b9bb91" opacity=".54"/>
+                <path d="M430 35c-38 91 19 135 45 180s-26 77 9 121 27 82 87 127" fill="none" stroke="#ede7d4" stroke-width="13" opacity=".8"/>
+                <path d="M430 35c-38 91 19 135 45 180s-26 77 9 121 27 82 87 127" fill="none" stroke="#bdac83" stroke-width="1.5" stroke-dasharray="5 7"/>
+                <g class="map-tree-grove" fill="#77845f" opacity=".58">
+                  <circle cx="391" cy="200" r="5"/><circle cx="414" cy="214" r="4"/><circle cx="397" cy="226" r="6"/><circle cx="425" cy="193" r="4"/><circle cx="380" cy="218" r="3"/>
+                  <circle cx="554" cy="280" r="5"/><circle cx="569" cy="291" r="3"/><circle cx="550" cy="305" r="4"/><circle cx="580" cy="273" r="5"/>
+                  <circle cx="368" cy="331" r="4"/><circle cx="382" cy="344" r="6"/><circle cx="362" cy="359" r="3"/><circle cx="391" cy="368" r="4"/>
+                </g>
+                <g class="map-water" fill="none" stroke="#839b9a" stroke-width="2.2" opacity=".8">
+                  <path d="M315 92c25 33 13 57 43 77s18 48 40 61"/>
+                  <path d="M316 92c23 35 11 58 39 77s19 48 39 62"/>
+                  <path d="M531 323c30 15 27 45 55 55s31 37 54 44"/>
+                  <path d="M529 327c28 14 28 42 52 52s34 36 58 43"/>
+                </g>
+              </g>
+              <path class="map-border" d="M425 36c58 17 76 47 92 88 15 40 47 51 47 92 0 31 35 51 30 90-3 31 29 46 23 82-7 41-31 58-23 97 8 36-18 53-45 37-22-14-45-7-64 16-20 25-44 4-59-16-13-18-36-19-57-7-25 14-40-6-49-27-14-32-45-33-66-45-27-15-29-46-10-67 19-23 8-53-13-69-25-20-21-49 3-65 24-15 30-47 20-75-12-35 7-62 43-64 37-3 69-23 84-52 12-25 25-29 44-15Z"/>
+              <g class="map-region-labels">
+                <text x="383" y="155">IZUHARA</text>
+                <text x="548" y="238">TOYOTAMA</text>
+                <text x="443" y="426">KAMIAGATA</text>
+                <text x="149" y="112">KOMODA INLET</text>
+                <text x="688" y="469">SEA OF JAPAN</text>
+              </g>
+              <g class="map-north" transform="translate(782 106)">
+                <text x="0" y="-15">N</text><path d="M0-7 9 18 0 13-9 18Z"/>
+              </g>
+            </svg>
+            <div class="map-markers" id="map-markers" aria-live="polite"></div>
+            <div class="map-scale" aria-hidden="true"><span></span> WIND-SWEPT TRAIL</div>
+            <div class="map-coordinate">34° 25′ N&nbsp; / &nbsp;129° 19′ E</div>
+          </div>
+          <div class="map-bottomline"><span>✳ &nbsp; LET THE KAMI GUIDE YOU</span><span>TSUSHIMA, JAPAN</span></div>
+        </div>
+
+        <aside class="place-panel" aria-label="Trail guide">
+          <div class="panel-heading">
+            <p class="eyebrow eyebrow-dark">THE WALKING GUIDE</p>
+            <p class="place-count" id="place-count" aria-live="polite"></p>
+          </div>
+          <div class="filters" role="group" aria-label="Filter places by landscape">
+            <button class="filter-button active" type="button" data-filter="all" aria-pressed="true">All</button>
+            <button class="filter-button" type="button" data-filter="forest" aria-pressed="false">Forest</button>
+            <button class="filter-button" type="button" data-filter="shrine" aria-pressed="false">Shrines</button>
+            <button class="filter-button" type="button" data-filter="waterfall" aria-pressed="false">Water</button>
+          </div>
+          <div class="place-list" id="place-list"></div>
+          <div class="selected-place" id="selected-place" aria-live="polite" aria-atomic="true">
+            <span class="selected-kicker">YOUR NEXT WAYPOINT</span>
+            <h3 id="selected-name"></h3>
+            <p id="selected-description"></p>
+            <div class="selected-meta"><span id="selected-region"></span><span id="selected-time"></span></div>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="field-notes section wrap" id="trails">
+      <div class="field-heading">
+        <div>
+          <p class="eyebrow eyebrow-dark">03 / LEAVE THE SWORD BEHIND</p>
+          <h2>Make room for <em>wonder.</em></h2>
+        </div>
+        <p>Some of the best views aren't marked by a quest. Follow the breeze, take the long way around, and let the island set the pace.</p>
+      </div>
+      <div class="note-grid">
+        <article class="note-card note-water">
+          <div class="note-image"><img src="images/1234.jpeg" alt="A waterfall spilling through a lush green ravine" loading="lazy"><span class="note-stamp">01 / WATER</span></div>
+          <div class="note-copy"><span class="note-label">LISTEN A LITTLE LONGER</span><h3>Where the water runs</h3><p>Follow the sound of falling water into a pocket of green. A perfect place to stop, breathe, and take in the island.</p><a href="#explore" data-select-location="spring-falls">Find a waterfall <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="note-card note-forest">
+          <div class="note-image"><img src="images/background.jpg" alt="A lone samurai beneath the golden light of Tsushima" loading="lazy"><span class="note-stamp">02 / FOREST</span></div>
+          <div class="note-copy"><span class="note-label">TAKE THE SHADED PATH</span><h3>Under the golden leaves</h3><p>Wind through amber trees and dappled light. The forest has a way of making the rest of the world feel far away.</p><a href="#explore" data-select-location="golden-forest">Walk in the forest <span aria-hidden="true">↗</span></a></div>
+        </article>
+        <article class="note-card note-shrine">
+          <div class="note-image"><div class="shrine-art" aria-hidden="true"><span>⛩</span><i></i><i></i><i></i></div><span class="note-stamp">03 / SHRINES</span></div>
+          <div class="note-copy"><span class="note-label">EARN THE VIEW</span><h3>A climb worth making</h3><p>Stone steps, cliffside paths, and a quiet shrine above the trees. Every turn in the trail offers a reason to slow down.</p><a href="#explore" data-select-location="golden-summit">Climb to a shrine <span aria-hidden="true">↗</span></a></div>
+        </article>
+      </div>
+    </section>
+
+    <section class="closing">
+      <div class="closing-content wrap">
+        <span class="closing-mark" aria-hidden="true">風</span>
+        <p class="eyebrow">WHEN THE WIND CALLS</p>
+        <h2>There is always<br><em>another path.</em></h2>
+        <a class="primary-link" href="#explore">Return to the map <span aria-hidden="true">↑</span></a>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer wrap">
+    <a class="brand" href="#top"><span class="brand-mark" aria-hidden="true">風</span><span class="brand-name">PATHS <span>OF TSUSHIMA</span></span></a>
+    <p>A fan-made field guide inspired by <em>Ghost of Tsushima</em>. Not affiliated with Sucker Punch Productions or Sony Interactive Entertainment.</p>
+    <a class="back-top" href="#top">BACK TO THE TOP ↑</a>
+  </footer>
+</body>
+</html>
