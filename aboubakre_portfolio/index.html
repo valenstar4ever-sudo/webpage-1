@@ -104,7 +104,25 @@
   </main>
 
   <footer class="footer" id="contacto">
-    <div class="footer-content"><span class="section-number">05 / CONTACTO</span><h2>¿Comenzamos una aventura?</h2><p>Abierto a aprender, descubrir y conocer nuevas oportunidades.</p><a href="mailto:tuemail@ejemplo.com" class="contact-button">CONTACTAR CONMIGO <span>↗</span></a><div class="footer-divider"></div><div class="footer-bottom"><a class="footer-logo" href="#inicio">AA<span>.</span></a><p>© <span id="year">2026</span> Aboubakre Azzabi.</p><a href="#inicio" class="back-to-top">VOLVER ARRIBA ↑</a></div></div>
+    <div class="footer-content">
+      <span class="section-number">05 / CONTACTO</span>
+      <h2>¿Comenzamos una aventura?</h2>
+      <p>Abierto a aprender, descubrir y conocer nuevas oportunidades.</p>
+      <form class="contact-form" action="https://formspree.io/f/xoeevoov" method="POST">
+        <label for="contact-name">Nombre</label>
+        <input id="contact-name" name="name" type="text" autocomplete="name" required>
+
+        <label for="contact-email">Correo electrónico</label>
+        <input id="contact-email" name="email" type="email" autocomplete="email" required>
+
+        <label for="contact-message">Mensaje</label>
+        <textarea id="contact-message" name="message" rows="5" required></textarea>
+
+        <button type="submit" class="contact-button">ENVIAR MENSAJE <span aria-hidden="true">↗</span></button>
+      </form>
+      <div class="footer-divider"></div>
+      <div class="footer-bottom"><a class="footer-logo" href="#inicio">AA<span>.</span></a><p>© <span id="year">2026</span> Aboubakre Azzabi.</p><a href="#inicio" class="back-to-top">VOLVER ARRIBA ↑</a></div>
+    </div>
   </footer>
 </body>
 </html>
