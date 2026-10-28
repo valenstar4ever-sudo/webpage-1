@@ -23,6 +23,30 @@ body {
     box-shadow: 0 10px 30px #0008;
 }
 
+.admin-brand {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 12px;
+    color: #f5e9ce;
+    font: 600 13px Georgia, serif;
+    letter-spacing: 0.12em;
+    text-decoration: none;
+}
+
+.admin-brand img {
+    width: 42px;
+    height: 42px;
+}
+
+.admin-brand small {
+    display: block;
+    margin-top: 4px;
+    color: #d9b477;
+    font: 600 8px Arial, sans-serif;
+    letter-spacing: 0.2em;
+}
+
 h1 {
     text-align: center;
     color: #d9b477;

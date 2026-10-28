@@ -106,6 +106,7 @@
 .vanlife-footer { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:20px 32px; background:#10120e; }
 .vanlife-footer p,.vanlife-footer>a:last-child { color:#8e897c; font-size:8px; letter-spacing:.12em; }
 .vanlife-footer .footer-logo { font-size:20px; }
+.vanlife-footer .footer-logo .brand-mark { width:32px; height:32px; }
 .vanlife-page .menu-toggle { position:relative; z-index:6; }
 .vanlife-page .nav-links { position:relative; z-index:6; }
 .vanlife-teaser-link { display:inline-flex; align-items:center; gap:10px; margin:22px 0 0 16px; color:#e8ddc3; font-size:8px; font-weight:700; letter-spacing:.14em; }
@@ -120,6 +121,11 @@
   .vanlife-page *, .vanlife-page *::before, .vanlife-page *::after { scroll-behavior:auto!important; animation-duration:.01ms!important; animation-iteration-count:1!important; transition-duration:.01ms!important; }
 }
 @media (max-width:800px) {
+  .vanlife-page .menu-toggle { display:grid; gap:5px; padding:10px; border:1px solid var(--line); background:rgba(23,25,20,.75); }
+  .vanlife-page .menu-toggle span { width:18px; height:1px; background:var(--paper); }
+  .vanlife-page .nav-links { position:absolute; top:71px; right:0; left:0; display:none; gap:13px; padding:15px 20px; border:1px solid var(--line); background:#191b16f5; }
+  .vanlife-page .nav-links.open { display:grid; }
+  .vanlife-page .nav-links a { display:block; padding:7px 0; }
   .vanlife-intro { grid-template-columns:1fr auto; gap:15px 25px; padding:80px 24px; }
   .vanlife-intro>.vanlife-overline { grid-column:1/-1; }
   .vanlife-map-section,.vanlife-gallery { padding:80px 24px; }

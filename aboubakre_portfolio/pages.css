@@ -1,0 +1,137 @@
+.journal-page { min-height:100vh; background-color:var(--ink); background-image:linear-gradient(rgba(23,25,20,.96),rgba(23,25,20,.98)),url("images/background.jpg"); background-attachment:fixed; }
+.journal-hero { position:relative; min-height:410px; overflow:hidden; background:linear-gradient(115deg,rgba(17,19,15,.9),rgba(23,25,20,.72)),url("images/background.jpg") center 42%/cover; }
+.journal-hero::after { position:absolute; right:-8%; bottom:-74%; width:62vw; aspect-ratio:1; border:1px solid rgba(197,138,72,.14); border-radius:50%; content:""; box-shadow:0 0 0 32px rgba(197,138,72,.025),0 0 0 64px rgba(197,138,72,.02); pointer-events:none; }
+.journal-navigation { position:absolute; }
+.journal-navigation .nav-links a[aria-current="page"] { color:var(--gold); }
+.journal-hero-copy { position:relative; z-index:1; width:min(var(--content),calc(100% - 64px)); margin:0 auto; padding:160px 0 68px; }
+.journal-hero-copy h1 { margin:20px 0 14px; font:500 clamp(42px,7vw,74px)/1.08 var(--serif); letter-spacing:.02em; }
+.journal-hero-copy h1 span { color:var(--gold); }
+.journal-hero-copy>p:last-child { max-width:540px; color:#c2baa8; font-size:13px; }
+.journal-main { min-height:50vh; }
+.atlas-section,.hobby-collection,.about-page-section,.about-experience { padding:82px 32px; }
+.atlas-layout { display:grid; grid-template-columns:minmax(0,1.55fr) minmax(270px,.7fr); max-width:var(--content); margin:auto; border:1px solid rgba(197,138,72,.3); }
+.atlas-map { position:relative; min-width:0; aspect-ratio:3/2; overflow:hidden; background:#293f3e; isolation:isolate; }
+.atlas-image { position:absolute; inset:0; width:100%; height:100%; object-fit:fill; }
+.atlas-marker { position:absolute; z-index:2; left:var(--pin-x); top:var(--pin-y); display:grid; width:34px; height:34px; place-items:center; padding:0; border:2px solid #fff2d1; border-radius:50%; background:#30251b; box-shadow:0 2px 8px #24150ecc; color:#f2e8d5; font:700 9px var(--sans); cursor:pointer; transform:translate(-50%,-50%); transition:transform .2s,background .2s,box-shadow .2s; }
+.atlas-marker:hover,.atlas-marker.is-selected { z-index:3; background:#8b3a2b; box-shadow:0 0 0 5px #fff0be70,0 2px 8px #24150ecc; transform:translate(-50%,-50%) scale(1.12); }
+.atlas-marker:focus-visible { z-index:4; outline:3px solid #fff2d1; outline-offset:3px; }
+.atlas-panel { display:flex; flex-direction:column; align-items:flex-start; padding:clamp(22px,4vw,40px); background:#1b1d17; }
+.atlas-panel h3 { margin:10px 0 3px; font:500 clamp(21px,2.4vw,30px)/1.25 var(--serif); }
+.atlas-activities { margin:0 0 18px; color:var(--gold); font-size:10px; font-weight:600; letter-spacing:.05em; }
+.atlas-panel>p:not(.atlas-activities) { color:#b6b1a3; font-size:12px; line-height:1.9; }
+.atlas-divider { width:100%; height:1px; margin:15px 0; background:var(--line); }
+.atlas-panel-hint { color:#928b78; font-size:8px; letter-spacing:.14em; }
+.text-link { display:inline-flex; gap:10px; align-items:center; margin-top:23px; color:var(--paper); font-size:10px; font-weight:700; letter-spacing:.07em; }
+.text-link span { color:var(--gold); transition:transform .2s; }
+.text-link:hover span,.text-link:focus-visible span { transform:translate(3px,-3px); }
+.atlas-list { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:0 14px; max-width:var(--content); margin:22px auto 0; padding:0; list-style:none; }
+.atlas-list button { width:100%; display:flex; align-items:center; gap:11px; padding:12px 8px; border:0; border-bottom:1px solid var(--line); background:transparent; color:var(--paper); text-align:left; font-size:10px; cursor:pointer; }
+.atlas-list button>span { color:var(--gold); font:12px var(--serif); }
+.atlas-list button:hover,.atlas-list button:focus-visible,.atlas-list button.is-selected { background:rgba(197,138,72,.08); outline:none; }
+.atlas-list button:focus-visible { box-shadow:inset 0 0 0 2px var(--gold); }
+.hobby-tools { display:grid; grid-template-columns:minmax(220px,.7fr) 1.3fr auto; align-items:end; gap:15px; max-width:var(--content); margin:0 auto 15px; }
+.hobby-search-label { grid-column:1; grid-row:1; color:var(--paper-dim); font-size:9px; font-weight:700; letter-spacing:.12em; text-transform:uppercase; }
+.hobby-search { grid-column:1; grid-row:2; width:100%; min-height:44px; margin-top:-13px; padding:10px 13px; border:1px solid var(--line); background:var(--ink-soft); color:var(--paper); font:12px var(--sans); }
+.hobby-search:focus-visible { outline:2px solid var(--gold); outline-offset:2px; }
+.hobby-filters { grid-column:2; grid-row:1/3; display:flex; flex-wrap:wrap; gap:7px; }
+.hobby-filters button,.favorites-filter { min-height:36px; padding:8px 11px; border:1px solid var(--line); background:transparent; color:var(--paper-dim); font-size:9px; font-weight:600; cursor:pointer; transition:background .2s,border-color .2s,color .2s,transform .2s; }
+.hobby-filters button:hover,.hobby-filters button:focus-visible,.hobby-filters button[aria-pressed="true"],.favorites-filter:hover,.favorites-filter:focus-visible,.favorites-filter[aria-pressed="true"] { border-color:var(--gold); background:rgba(197,138,72,.13); color:var(--paper); }
+.hobby-filters button:focus-visible,.favorites-filter:focus-visible,.favorite-button:focus-visible { outline:2px solid var(--gold); outline-offset:3px; }
+.favorites-filter { grid-column:3; grid-row:1/3; color:var(--gold); white-space:nowrap; }
+.hobby-results { max-width:var(--content); min-height:1.5em; margin:0 auto 14px; color:#928b78; font-size:9px; }
+.hobby-grid { display:grid; grid-template-columns:repeat(3,minmax(0,1fr)); gap:15px; max-width:var(--content); margin:auto; }
+.hobby-card { position:relative; display:flex; min-height:300px; flex-direction:column; align-items:flex-start; padding:27px 24px 20px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(255,255,255,.035),transparent 72%); transition:transform .3s,border-color .3s,background .3s; }
+.hobby-card:hover { transform:translateY(-5px); border-color:rgba(197,138,72,.6); background:rgba(197,138,72,.045); }
+.hobby-card[hidden] { display:none; }
+.hobby-card-number { align-self:flex-end; color:#928b78; font-size:8px; font-weight:700; letter-spacing:.12em; }
+.hobby-symbol { display:grid; width:44px; height:44px; place-items:center; margin:7px 0 15px; border:1px solid rgba(197,138,72,.45); color:var(--gold); font-size:24px; }
+.hobby-card h3 { margin:0 0 8px; font:500 19px var(--serif); }
+.hobby-card>p { margin:0 0 16px; color:#b6b1a3; font-size:11px; line-height:1.85; }
+.hobby-card-note { margin-top:auto; color:var(--gold); font-size:7px; font-weight:700; letter-spacing:.13em; }
+.favorite-button { display:flex; align-items:center; gap:7px; margin-top:17px; padding:8px 10px; border:1px solid var(--line); background:transparent; color:var(--paper-dim); font-size:9px; cursor:pointer; transition:color .2s,border-color .2s,background .2s; }
+.favorite-button:hover,.favorite-button[aria-pressed="true"] { border-color:var(--gold); background:rgba(197,138,72,.11); color:var(--paper); }
+.favorite-button [aria-hidden="true"] { color:var(--gold); font-size:14px; }
+.hobby-empty { max-width:var(--content); margin:24px auto; color:var(--paper-dim); text-align:center; }
+.hobby-status { max-width:var(--content); min-height:1.5em; margin:12px auto 0; color:var(--gold); font-size:10px; }
+.about-page-layout { display:grid; grid-template-columns:minmax(280px,.85fr) minmax(0,1.15fr); gap:clamp(40px,8vw,110px); align-items:center; max-width:var(--content); margin:auto; }
+.compass-journal { position:relative; display:grid; min-height:420px; place-items:center; overflow:hidden; border:1px solid rgba(197,138,72,.32); background:radial-gradient(ellipse at center,#5b513b 0%,#35362b 52%,#262820 100%); box-shadow:inset 0 0 80px #151711; }
+.compass-journal::before,.compass-journal::after { position:absolute; width:135%; height:1px; background:rgba(226,203,158,.18); content:""; transform:rotate(35deg); }
+.compass-journal::after { transform:rotate(-35deg); }
+.compass-page-label,.compass-page-caption { position:absolute; z-index:1; color:#d2c5a4; font-size:8px; font-weight:700; letter-spacing:.18em; }
+.compass-page-label { top:22px; left:22px; }
+.compass-page-label b { display:block; margin-top:5px; color:var(--gold); font-weight:500; }
+.compass-page-caption { right:20px; bottom:20px; left:20px; text-align:center; }
+.compass-page-rose { position:relative; display:grid; width:min(250px,66vw); aspect-ratio:1; place-items:center; border:1px solid rgba(220,196,145,.6); border-radius:50%; background:repeating-conic-gradient(from 0deg,transparent 0deg 14deg,rgba(220,196,145,.15) 14.3deg 14.7deg,transparent 15deg 30deg); box-shadow:0 0 0 14px rgba(220,196,145,.04),inset 0 0 30px #15171180; }
+.compass-page-rose::before,.compass-page-rose::after { position:absolute; inset:12px; border:1px solid rgba(220,196,145,.3); border-radius:50%; content:""; }
+.compass-page-rose::after { inset:34px; border-style:dashed; }
+.compass-page-direction { position:absolute; z-index:1; color:var(--paper); font:12px var(--serif); }
+.compass-page-n { top:8px; }.compass-page-e { right:8px; }.compass-page-s { bottom:8px; }.compass-page-w { left:8px; }
+.compass-page-inner { position:relative; display:grid; width:64%; aspect-ratio:1; place-items:center; border:1px solid rgba(220,196,145,.24); border-radius:50%; }
+.compass-page-needle { position:relative; width:15px; height:70%; background:linear-gradient(180deg,var(--rust) 0 50%,var(--paper) 50%); clip-path:polygon(50% 0,100% 50%,50% 100%,0 50%); animation:compass-needle-turn 24s linear infinite; }
+.compass-page-center { position:absolute; z-index:1; width:13px; height:13px; border:2px solid var(--paper); border-radius:50%; background:var(--gold); }
+@keyframes compass-needle-turn { to { transform:rotate(360deg); } }
+.about-page-copy h2 { margin:12px 0 22px; font:500 clamp(31px,4.4vw,50px)/1.2 var(--serif); }
+.about-page-copy>p { color:#b6b1a3; font-size:12px; line-height:2; }
+.about-facts { display:flex; flex-wrap:wrap; gap:25px; margin:30px 0 0; padding-top:20px; border-top:1px solid var(--line); }
+.about-facts div { display:grid; gap:4px; }
+.about-facts dt { color:#928b78; font-size:8px; letter-spacing:.15em; }
+.about-facts dd { margin:0; color:var(--paper); font-size:10px; }
+.about-experience { background:#171914; }
+.about-next { padding:75px 24px 86px; background:linear-gradient(130deg,#25251f,#1c211a); text-align:center; }
+.about-next h2 { margin:13px 0 5px; font:500 clamp(29px,4vw,44px)/1.3 var(--serif); }
+.about-next .explore-button { margin-top:17px; }
+.journal-footer { display:flex; align-items:center; justify-content:space-between; gap:20px; padding:22px max(24px,calc((100% - var(--content))/2)); border-top:1px solid var(--line); background:#11130f; }
+.journal-footer>p,.journal-footer>.back-to-top { color:#8e897c; font-size:8px; letter-spacing:.1em; }
+.journal-footer .brand-mark { width:34px; height:34px; }
+@media (max-width:900px) {
+  .journal-navigation { width:calc(100% - 48px); }
+  .journal-navigation .menu-toggle { display:grid; gap:5px; padding:10px; border:1px solid var(--line); background:rgba(23,25,20,.75); }
+  .journal-navigation .menu-toggle span { width:18px; height:1px; background:var(--paper); transition:transform .2s; }
+  .journal-navigation .menu-toggle[aria-expanded="true"] span:first-child { transform:translateY(3px) rotate(45deg); }
+  .journal-navigation .menu-toggle[aria-expanded="true"] span:last-child { transform:translateY(-3px) rotate(-45deg); }
+  .journal-navigation .nav-links { position:absolute; top:71px; right:0; left:0; display:none; gap:13px; padding:15px 20px; border:1px solid var(--line); background:#191b16f5; }
+  .journal-navigation .nav-links.open { display:grid; }
+  .journal-navigation .nav-links a { display:block; padding:7px 0; }
+}
+@media (max-width:900px) {
+  .vanlife-page .vanlife-navigation { width:calc(100% - 48px); }
+  .vanlife-page .vanlife-navigation .menu-toggle { display:grid; gap:5px; padding:10px; border:1px solid var(--line); background:rgba(23,25,20,.75); }
+  .vanlife-page .vanlife-navigation .menu-toggle span { width:18px; height:1px; background:var(--paper); }
+  .vanlife-page .vanlife-navigation .nav-links { position:absolute; top:71px; right:0; left:0; display:none; gap:13px; padding:15px 20px; border:1px solid var(--line); background:#191b16f5; }
+  .vanlife-page .vanlife-navigation .nav-links.open { display:grid; }
+  .vanlife-page .vanlife-navigation .nav-links a { display:block; padding:7px 0; }
+}
+@media (max-width:800px) {
+  .atlas-layout { grid-template-columns:1fr; }
+  .atlas-panel { min-height:250px; }
+  .hobby-tools { grid-template-columns:1fr auto; }
+  .hobby-search-label,.hobby-search { grid-column:1/-1; }
+  .hobby-search { grid-row:2; }
+  .hobby-filters { grid-column:1; grid-row:3; }
+  .favorites-filter { grid-column:2; grid-row:3; align-self:start; }
+  .hobby-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
+  .about-page-layout { gap:38px; }
+  .compass-journal { min-height:350px; }
+}
+@media (max-width:620px) {
+  .journal-hero { min-height:370px; }
+  .journal-hero-copy { width:calc(100% - 40px); padding:145px 0 50px; }
+  .journal-hero-copy h1 { font-size:clamp(39px,10vw,58px); }
+  .journal-hero-copy>p:last-child { max-width:350px; font-size:11px; }
+  .atlas-section,.hobby-collection,.about-page-section,.about-experience { padding:65px 18px; }
+  .atlas-list { grid-template-columns:repeat(2,minmax(0,1fr)); gap:0 8px; }
+  .atlas-marker { width:29px; height:29px; font-size:8px; }
+  .atlas-panel { padding:24px 20px; }
+  .hobby-tools { grid-template-columns:1fr; align-items:start; }
+  .hobby-search-label,.hobby-search,.hobby-filters,.favorites-filter { grid-column:1; }
+  .hobby-search-label { grid-row:1; }
+  .hobby-search { grid-row:2; margin-top:-13px; }
+  .hobby-filters { grid-row:3; }
+  .favorites-filter { grid-row:4; justify-self:start; }
+  .hobby-grid { grid-template-columns:1fr; }
+  .hobby-card { min-height:260px; }
+  .about-page-layout { grid-template-columns:1fr; }
+  .compass-journal { min-height:320px; }
+  .journal-footer { flex-wrap:wrap; justify-content:center; padding:20px; }
+  .journal-footer>p { order:3; flex-basis:100%; margin:0; text-align:center; }
+}

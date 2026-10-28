@@ -52,8 +52,13 @@ button { font: inherit; }
 .topographic { position:absolute; inset:-15%; z-index:-1; opacity:.18; background-image:url("data:image/svg+xml,%3Csvg width='500' height='500' viewBox='0 0 500 500' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='none' stroke='%23c9b58b' stroke-width='1'%3E%3Cpath d='M-30 80Q80 10 160 80T350 80T550 60M-30 110Q80 40 160 110T350 110T550 90M-30 140Q80 70 160 140T350 140T550 120M-30 170Q80 100 160 170T350 170T550 150M-30 200Q80 130 160 200T350 200T550 180M-30 350Q60 280 150 350T340 350T550 330M-30 380Q60 310 150 380T340 380T550 360M-30 410Q60 340 150 410T340 410T550 390M-30 440Q60 370 150 440T340 440T550 420'/%3E%3C/g%3E%3C/svg%3E"); background-size:500px; animation: map-drift 70s linear infinite; }
 @keyframes map-drift { to { background-position: 500px 250px; } }
 .navigation { position:absolute; z-index:5; top:0; left:50%; transform:translateX(-50%); width:min(var(--content),calc(100% - 64px)); height:88px; display:flex; align-items:center; justify-content:space-between; border-bottom:1px solid var(--line); }
-.logo,.footer-logo { font:700 26px var(--serif); letter-spacing:.04em; }
-.logo span,.footer-logo span { color:var(--gold); }
+.logo,.footer-logo { display:inline-flex; align-items:center; gap:10px; font:700 26px var(--serif); letter-spacing:.04em; }
+.brand-mark { display:block; width:38px; height:38px; flex:0 0 auto; transition:transform .35s ease; }
+.brand-lockup:hover .brand-mark,.brand-lockup:focus-visible .brand-mark { transform:rotate(-8deg); }
+.brand-copy { display:grid; gap:3px; line-height:1.15; }
+.brand-name { color:var(--paper); font:600 12px var(--serif); letter-spacing:.12em; }
+.brand-caption { color:var(--gold); font:600 7px var(--sans); letter-spacing:.2em; }
+.brand-lockup:focus-visible { outline:2px solid var(--gold); outline-offset:5px; }
 .nav-links { display:flex; align-items:center; gap:38px; list-style:none; margin:0; padding:0; }
 .nav-links a { color:#d4cbb6; font-size:10px; font-weight:600; letter-spacing:.15em; text-transform:uppercase; transition:color .25s; }
 .nav-links a:hover,.nav-links a:focus-visible { color:var(--gold); }
@@ -102,7 +107,7 @@ button { font: inherit; }
 .about-details span { color:#928b78; font-size:8px; letter-spacing:.16em; }
 .about-details b { font-size:10px; font-weight:500; }
 .experience { background:#171914; }
-.experience-grid { max-width:var(--content); margin:auto; display:grid; grid-template-columns:repeat(3,1fr); gap:17px; }
+.experience-grid { max-width:var(--content); margin:auto; display:grid; grid-template-columns:repeat(4,minmax(0,1fr)); gap:17px; }
 .experience-card { position:relative; min-height:290px; padding:31px 27px; border:1px solid var(--line); background:linear-gradient(145deg,rgba(255,255,255,.025),transparent 65%); transition:transform .35s,border-color .35s,background .35s; }
 .experience-card:hover { transform:translateY(-7px); border-color:rgba(197,138,72,.65); background:rgba(197,138,72,.045); }
 .card-number { position:absolute; top:22px; right:23px; color:#77715f; font:12px var(--serif); }
@@ -237,9 +242,19 @@ button { font: inherit; }
   .navigation,.hero-content { width:calc(100% - 48px); }
   .nav-links { gap:22px; }
   .about-content { gap:38px; }
+  .experience-grid { grid-template-columns:repeat(2,minmax(0,1fr)); }
   .map-layout { grid-template-columns:1fr; }
   .map-info { padding:25px; }
   .interest-list { grid-template-columns:repeat(2,minmax(0,1fr)); column-gap:18px; }
+}
+@media (max-width:900px) {
+  .navigation .menu-toggle { display:grid; gap:5px; padding:10px; border:1px solid var(--line); background:rgba(23,25,20,.75); }
+  .navigation .menu-toggle span { width:18px; height:1px; background:var(--paper); transition:transform .2s; }
+  .navigation .menu-toggle[aria-expanded="true"] span:first-child { transform:translateY(3px) rotate(45deg); }
+  .navigation .menu-toggle[aria-expanded="true"] span:last-child { transform:translateY(-3px) rotate(-45deg); }
+  .navigation .nav-links { position:absolute; top:71px; right:0; left:0; display:none; gap:13px; padding:15px 20px; border:1px solid var(--line); background:#191b16f5; }
+  .navigation .nav-links.open { display:grid; }
+  .navigation .nav-links a { display:block; padding:7px 0; }
 }
 @media (max-width:620px) {
   .hero { min-height:690px; height:100svh; }

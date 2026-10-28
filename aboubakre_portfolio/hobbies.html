@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Explora las aficiones de Aboubakre: videojuegos, longboarding, senderismo, running y meditación.">
+  <meta name="theme-color" content="#171914">
+  <title>Aficiones — Aboubakre Azzabi</title>
+  <link rel="icon" type="image/svg+xml" href="images/field-journal-mark.svg">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleold.css">
+  <link rel="stylesheet" href="pages.css">
+  <script src="script.js" defer></script>
+  <script src="pages.js" defer></script>
+</head>
+<body class="journal-page">
+  <a class="skip-link" href="#main-content">Saltar al contenido</a>
+  <header class="journal-hero">
+    <div class="topographic" aria-hidden="true"></div>
+    <nav class="navigation journal-navigation" aria-label="Navegación principal">
+      <a class="logo brand-lockup" href="index.html" aria-label="Aboubakre Azzabi — inicio"><img class="brand-mark" src="images/field-journal-mark.svg" alt=""><span class="brand-copy"><span class="brand-name">ABOUBAKRE</span><span class="brand-caption">FIELD JOURNAL</span></span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+      <ul class="nav-links" id="nav-links">
+        <li><a href="index.html">Inicio</a></li><li><a href="map.html">Mapa</a></li><li><a href="hobbies.html" aria-current="page">Aficiones</a></li><li><a href="about.html">Sobre mí</a></li><li><a href="vanlife.html">Vanlife</a></li><li><a href="index.html#contacto">Contacto</a></li>
+      </ul>
+    </nav>
+    <div class="journal-hero-copy">
+      <p class="eyebrow"><span class="eyebrow-line"></span> CUADERNO DE CURIOSIDADES · 02</p>
+      <h1>El camino también<br><span>es el destino.</span></h1>
+      <p>Cinco aficiones, cinco maneras de encontrar algo nuevo en cada jornada.</p>
+    </div>
+  </header>
+  <main class="journal-main" id="main-content">
+    <section class="section hobby-collection" aria-labelledby="hobby-title">
+      <div class="section-heading">
+        <span class="section-number">02 / COLECCIÓN PERSONAL</span>
+        <h2 id="hobby-title">Rutas de curiosidad</h2>
+        <p>Busca una actividad, filtra la colección y guarda tus favoritas en este dispositivo.</p>
+      </div>
+      <div class="hobby-tools">
+        <label class="hobby-search-label" for="hobby-search">Buscar aficiones</label>
+        <input id="hobby-search" class="hobby-search" type="search" placeholder="Prueba «montaña» o «juego»" autocomplete="off">
+        <div class="hobby-filters" role="group" aria-label="Filtrar por categoría">
+          <button type="button" data-hobby-filter="all" aria-pressed="true">Todas</button>
+          <button type="button" data-hobby-filter="gaming" aria-pressed="false">Gaming</button>
+          <button type="button" data-hobby-filter="longboarding" aria-pressed="false">Longboarding</button>
+          <button type="button" data-hobby-filter="hiking" aria-pressed="false">Senderismo</button>
+          <button type="button" data-hobby-filter="running" aria-pressed="false">Running</button>
+          <button type="button" data-hobby-filter="meditation" aria-pressed="false">Meditación</button>
+        </div>
+        <button class="favorites-filter" type="button" id="favorites-filter" aria-pressed="false">☆ <span>Ver favoritas</span></button>
+      </div>
+      <p class="hobby-results" id="hobby-results" aria-live="polite"></p>
+      <div class="hobby-grid" id="hobby-grid">
+        <article class="hobby-card" data-hobby="gaming" data-search="gaming videojuegos juegos consolas ghost of tsushima aventura">
+          <span class="hobby-card-number">01 / PLAY</span><span class="hobby-symbol" aria-hidden="true">⌘</span>
+          <h3>Gaming</h3><p>Un universo de historias, estrategia y tecnología. Los videojuegos fueron el comienzo de mi curiosidad por el mundo digital.</p>
+          <span class="hobby-card-note">EXPLORAR · IMAGINAR · JUGAR</span>
+          <button class="favorite-button" type="button" data-favorite="gaming" aria-pressed="false"><span aria-hidden="true">☆</span> <span>Guardar en favoritas</span></button>
+        </article>
+        <article class="hobby-card" data-hobby="longboarding" data-search="longboarding longboard patinaje skating tabla movimiento equilibrio">
+          <span class="hobby-card-number">02 / FLOW</span><span class="hobby-symbol" aria-hidden="true">⌁</span>
+          <h3>Longboarding</h3><p>Movimiento, equilibrio y aire libre: una invitación a recorrer el camino a tu propio ritmo.</p>
+          <span class="hobby-card-note">RODAR · SENTIR · FLUIR</span>
+          <button class="favorite-button" type="button" data-favorite="longboarding" aria-pressed="false"><span aria-hidden="true">☆</span> <span>Guardar en favoritas</span></button>
+        </article>
+        <article class="hobby-card" data-hobby="hiking" data-search="hiking senderismo montaña naturaleza rutas caminos">
+          <span class="hobby-card-number">03 / TRAIL</span><span class="hobby-symbol" aria-hidden="true">△</span>
+          <h3>Senderismo</h3><p>Seguir un sendero, descubrir paisajes y dejar espacio para la calma entre un paso y el siguiente.</p>
+          <span class="hobby-card-note">CAMINAR · OBSERVAR · DESCUBRIR</span>
+          <button class="favorite-button" type="button" data-favorite="hiking" aria-pressed="false"><span aria-hidden="true">☆</span> <span>Guardar en favoritas</span></button>
+        </article>
+        <article class="hobby-card" data-hobby="running" data-search="running correr carrera movimiento aire libre">
+          <span class="hobby-card-number">04 / PACE</span><span class="hobby-symbol" aria-hidden="true">↗</span>
+          <h3>Running</h3><p>Encontrar un ritmo propio y avanzar kilómetro a kilómetro, disfrutando del trayecto.</p>
+          <span class="hobby-card-note">RESPIRAR · AVANZAR · REPETIR</span>
+          <button class="favorite-button" type="button" data-favorite="running" aria-pressed="false"><span aria-hidden="true">☆</span> <span>Guardar en favoritas</span></button>
+        </article>
+        <article class="hobby-card" data-hobby="meditation" data-search="meditation meditación calma respirar atención pausa">
+          <span class="hobby-card-number">05 / STILLNESS</span><span class="hobby-symbol" aria-hidden="true">✳</span>
+          <h3>Meditación</h3><p>Una pausa para respirar, bajar el ruido y prestar atención al momento presente.</p>
+          <span class="hobby-card-note">HACER PAUSA · RESPIRAR · ESTAR</span>
+          <button class="favorite-button" type="button" data-favorite="meditation" aria-pressed="false"><span aria-hidden="true">☆</span> <span>Guardar en favoritas</span></button>
+        </article>
+      </div>
+      <p class="hobby-empty" id="hobby-empty" hidden>No hay aficiones que coincidan. Prueba otra búsqueda o categoría.</p>
+      <p class="hobby-status" id="hobby-status" role="status" aria-live="polite"></p>
+    </section>
+  </main>
+  <footer class="journal-footer">
+    <a class="footer-logo brand-lockup" href="index.html" aria-label="Aboubakre Azzabi — inicio"><img class="brand-mark" src="images/field-journal-mark.svg" alt=""><span class="brand-copy"><span class="brand-name">ABOUBAKRE</span><span class="brand-caption">FIELD JOURNAL</span></span></a>
+    <p>Un cuaderno para seguir la curiosidad.</p>
+    <a class="back-to-top" href="#main-content">VOLVER ARRIBA ↑</a>
+  </footer>
+</body>
+</html>
