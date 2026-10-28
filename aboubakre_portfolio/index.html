@@ -20,7 +20,7 @@
       <a class="logo" href="#inicio" aria-label="Aboubakre Azzabi, inicio">AA<span>.</span></a>
       <button class="menu-toggle" aria-expanded="false" aria-controls="nav-links" aria-label="Abrir menú"><span></span><span></span></button>
       <ul class="nav-links" id="nav-links">
-        <li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#experiencia">Experiencia</a></li><li><a href="#mapa">Explorar</a></li><li><a href="#contacto">Contacto</a></li>
+        <li><a href="#sobre-mi">Sobre mí</a></li><li><a href="#experiencia">Experiencia</a></li><li><a href="#mapa">Explorar</a></li><li><a href="vanlife.html">VANLIFE</a></li><li><a href="#contacto">Contacto</a></li>
       </ul>
     </nav>
     <div class="hero-content">
@@ -28,6 +28,7 @@
       <h1>ABOUBAKRE<br><span>AZZABI</span></h1>
       <p class="hero-description">Entre líneas de código y caminos desconocidos,<br class="desktop-only"> cada día es una nueva aventura.</p>
       <a href="#sobre-mi" class="explore-button">COMENZAR LA AVENTURA <span aria-hidden="true">↓</span></a>
+      <a href="vanlife.html" class="vanlife-teaser-link">VANLIFE · ENTRE ESPAÑA Y MARRUECOS <span aria-hidden="true">↗</span></a>
     </div>
     <div class="hero-coordinate">38° 59' N &nbsp;·&nbsp; FIELD NOTES / 001</div>
     <a class="scroll-cue" href="#contenido"><span></span> DESPLÁZATE PARA EXPLORAR</a>
@@ -61,33 +62,51 @@
       </div>
     </section>
 
-    <section class="map-section section" id="mapa">
-      <div class="section-heading reveal"><span class="section-number">03 / EXPLORACIÓN</span><h2>Mi mapa de aventuras</h2><p>Cada punto representa una parte de mi historia.</p></div>
+    <section class="map-section section hobby-map-section" id="mapa">
+      <div class="section-heading reveal"><span class="section-number">03 / DESCUBRIR</span><h2>Mapa de hobbies</h2><p>Gaming, skating, senderismo, running y rincones para meditar. Elige un lugar para abrir su foto.</p></div>
       <div class="map-layout reveal">
-        <div class="adventure-map" aria-label="Mapa ilustrado con marcadores de mis intereses y objetivos">
-          <div class="map-grain"></div><div class="map-compass"><span>N</span><b>✦</b><span>S</span></div>
-          <div class="map-title"><span>AZZABI / FIELD MAP</span><small>PERSONAL ADVENTURE · EST. 2026</small></div>
-          <svg class="map-route" viewBox="0 0 1000 600" preserveAspectRatio="none" aria-hidden="true"><path class="route-shadow" d="M90 470 C190 400 210 330 330 365 S450 465 520 315 S660 165 720 270 S830 370 920 140"/><path class="route-line" d="M90 470 C190 400 210 330 330 365 S450 465 520 315 S660 165 720 270 S830 370 920 140"/></svg>
-          <button class="map-marker marker-gaming active" data-location="gaming" aria-label="Gaming"><span class="pin">◆</span><span class="marker-label">GAMING</span></button>
-          <button class="map-marker marker-coding" data-location="coding" aria-label="Coding"><span class="pin">◆</span><span class="marker-label">CODING</span></button>
-          <button class="map-marker marker-biking" data-location="biking" aria-label="Biking"><span class="pin">◆</span><span class="marker-label">BIKING</span></button>
-          <button class="map-marker marker-skating" data-location="skating" aria-label="Skating"><span class="pin">◆</span><span class="marker-label">SKATING</span></button>
-          <button class="map-marker marker-camping" data-location="camping" aria-label="Camping"><span class="pin">◆</span><span class="marker-label">CAMPING</span></button>
-          <button class="map-marker marker-hiking" data-location="hiking" aria-label="Hiking"><span class="pin">◆</span><span class="marker-label">HIKING</span></button>
-          <button class="map-marker marker-spanish" data-location="spanish" aria-label="Spanish"><span class="pin">◆</span><span class="marker-label">SPANISH</span></button>
-          <div class="map-legend"><span>✦</span> ROUTE OF DISCOVERY</div>
-          <span class="map-edge edge-a">N 38° 59' / E 00° 31'</span><span class="map-edge edge-b">UNCHARTED TERRITORY</span>
+        <div class="adventure-map hobby-map" role="group" aria-label="Mapa de descubrimiento de hobbies con nueve lugares interactivos">
+          <img class="map-image" src="images/hobbies-discovery-map.png" alt="Mapa ilustrado de descubrimiento de hobbies, con montañas, bosques, costa, llanuras, lago y ruinas">
+          <button class="map-marker" data-location="snowy-peaks" style="--pin-x:28.6%;--pin-y:13.7%" aria-label="Snowy Peaks, senderismo y conocimiento" aria-expanded="false" aria-controls="photo-snowy-peaks">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-snowy-peaks" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/snowy-peaks.jpg" alt="Foto de Snowy Peaks"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/snowy-peaks.jpg</small></span></span><span class="popup-caption">Snowy Peaks <small>senderismo y conocimiento</small></span></span>
+          </button>
+          <button class="map-marker" data-location="cliffside" style="--pin-x:57.5%;--pin-y:22.3%" aria-label="The Cliffside, walking" aria-expanded="false" aria-controls="photo-cliffside">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-cliffside" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/cliffside.jpg" alt="Foto de The Cliffside"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/cliffside.jpg</small></span></span><span class="popup-caption">The Cliffside <small>Skating</small></span></span>
+          </button>
+          <button class="map-marker" data-location="whispering-forest" style="--pin-x:22.8%;--pin-y:31.6%" aria-label="forest trails" aria-expanded="false" aria-controls="photo-whispering-forest">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-whispering-forest" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/whispering-forest.jpg" alt="Foto de The Whispering Forest"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/whispering-forest.jpg</small></span></span><span class="popup-caption">The Whispering Forest <small>Meditación</small></span></span>
+          </button>
+          <button class="map-marker" data-location="endless-plains" style="--pin-x:58.2%;--pin-y:40.9%" aria-label="The Endless Plains " aria-expanded="false" aria-controls="photo-endless-plains">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-endless-plains" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/endless-plains.jpg" alt="Foto de The Endless Plains"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/endless-plains.jpg</small></span></span><span class="popup-caption">The Endless Plains <small>Running </small></span></span>
+          </button>
+          <button class="map-marker" data-location="hidden-coast" style="--pin-x:14.9%;--pin-y:48%" aria-label="Languages" aria-expanded="false" aria-controls="photo-hidden-coast">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-hidden-coast" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/hidden-coast.jpg" alt="Foto de The Hidden Coast"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/hidden-coast.jpg</small></span></span><span class="popup-caption">The Hidden Coast <small>Gaming</small></span></span>
+          </button>
+          <button class="map-marker" data-location="cinder-mountains" style="--pin-x:31.5%;--pin-y:55.1%" aria-label="The Cinder Mountains, senderismo y gaming" aria-expanded="false" aria-controls="photo-cinder-mountains">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-cinder-mountains" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/cinder-mountains.jpg" alt="Foto de The Cinder Mountains"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/cinder-mountains.jpg</small></span></span><span class="popup-caption">The Cinder Mountains <small>hiking</small></span></span>
+          </button>
+          <button class="map-marker" data-location="calm-lake" style="--pin-x:53%;--pin-y:59.2%" aria-label="The Calm Lake, gaming " aria-expanded="false" aria-controls="photo-calm-lake">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-calm-lake" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/calm-lake.jpg" alt="Foto de The Calm Lake"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/calm-lake.jpg</small></span></span><span class="popup-caption">The Calm Lake <small>Meditación</small></span></span>
+          </button>
+          <button class="map-marker" data-location="sunken-ruins" style="--pin-x:27.5%;--pin-y:79.3%" aria-label="The Sunken Ruins, skating" aria-expanded="false" aria-controls="photo-sunken-ruins">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-sunken-ruins" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/sunken-ruins.jpg" alt="Foto de The Sunken Ruins"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/sunken-ruins.jpg</small></span></span><span class="popup-caption">The Sunken Ruins <small>Skating</small></span></span>
+          </button>
+          <button class="map-marker" data-location="southern-islands" style="--pin-x:68.4%;--pin-y:79.4%" aria-label="The Southern Islands, hiking " aria-expanded="false" aria-controls="photo-southern-islands">
+            <span class="pin" aria-hidden="true"></span><span class="map-popup" id="photo-southern-islands" hidden><span class="photo-frame"><img class="place-photo" data-src="images/hobby-photos/southern-islands.jpg" alt="Foto de The Southern Islands"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/hobby-photos/southern-islands.jpg</small></span></span><span class="popup-caption">The Southern Islands <small>photography</small></span></span>
+          </button>
         </div>
         <aside class="map-info">
-          <span class="small-label">EXPLORE MY WORLD</span><h3>Mis intereses</h3><p class="map-hint">Selecciona un marcador del mapa para explorar cada destino.</p>
+          <span class="small-label">CAMINOS DE AVENTURA</span><h3>Elige tu camino</h3><p class="map-hint">Cada lugar guarda una actividad distinta. Añade las fotos a <code>images/hobby-photos/</code>.</p>
           <div class="interest-list">
-            <button class="interest-item active" data-location="gaming"><span class="interest-icon">⌘</span><span><b>Gaming</b><small>Videojuegos y tecnología.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="coding"><span class="interest-icon">⌨</span><span><b>Coding</b><small>Aprender programación y crear.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="biking"><span class="interest-icon">↗</span><span><b>Biking</b><small>Descubrir caminos en bicicleta.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="skating"><span class="interest-icon">⌁</span><span><b>Skating</b><small>Movimiento, equilibrio y diversión.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="camping"><span class="interest-icon">△</span><span><b>Camping</b><small>Naturaleza y aventura.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="hiking"><span class="interest-icon">♧</span><span><b>Hiking</b><small>Montañas y nuevos lugares.</small></span><span class="item-arrow">↗</span></button>
-            <button class="interest-item" data-location="spanish"><span class="interest-icon">文</span><span><b>Spanish</b><small>Mejorar mi español cada día.</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="snowy-peaks"><span class="interest-icon">01</span><span><b>Snowy Peaks</b><small>Senderismo · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="cliffside"><span class="interest-icon">02</span><span><b>The Cliffside</b><small>Skating · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="whispering-forest"><span class="interest-icon">03</span><span><b>The Whispering Forest</b><small>Senderismo · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="endless-plains"><span class="interest-icon">04</span><span><b>The Endless Plains</b><small>Running · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="hidden-coast"><span class="interest-icon">05</span><span><b>The Hidden Coast</b><small>Gaming · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="cinder-mountains"><span class="interest-icon">06</span><span><b>The Cinder Mountains</b><small>Senderismo · Gaming</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="calm-lake"><span class="interest-icon">07</span><span><b>The Calm Lake</b><small>Gaming · Meditación</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="sunken-ruins"><span class="interest-icon">08</span><span><b>The Sunken Ruins</b><small>Gaming · Skating</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="southern-islands"><span class="interest-icon">09</span><span><b>The Southern Islands</b><small>Skating · Running</small></span><span class="item-arrow">↗</span></button>
           </div>
         </aside>
       </div>
@@ -124,5 +143,32 @@
       <div class="footer-bottom"><a class="footer-logo" href="#inicio">AA<span>.</span></a><p>© <span id="year">2026</span> Aboubakre Azzabi.</p><a href="#inicio" class="back-to-top">VOLVER ARRIBA ↑</a></div>
     </div>
   </footer>
+  <section class="chat-widget" aria-label="Asistente del portfolio">
+    <div class="chat-panel" id="chat-panel" role="dialog" aria-labelledby="chat-title" hidden>
+      <div class="chat-header">
+        <div><span class="small-label">DIARIO DE AVENTURA · VALENCIA</span><h2 id="chat-title">¿Cuál será tu próxima misión?</h2></div>
+        <button class="chat-close" type="button" aria-label="Cerrar chat">×</button>
+      </div>
+      <div class="chat-quest-intro"><span class="quest-compass" aria-hidden="true">✦</span><p>Elige una ruta para empezar o pregúntame lo que quieras.</p></div>
+      <div class="chat-quest-tabs" role="tablist" aria-label="Temas de aventura">
+        <button type="button" role="tab" id="tab-hiking" aria-selected="true" aria-controls="quest-questions" data-quest-category="hiking">Senderismo</button>
+        <button type="button" role="tab" id="tab-gaming" aria-selected="false" aria-controls="quest-questions" data-quest-category="gaming" tabindex="-1">Gaming</button>
+        <button type="button" role="tab" id="tab-camping" aria-selected="false" aria-controls="quest-questions" data-quest-category="camping" tabindex="-1">Camping</button>
+        <button type="button" role="tab" id="tab-spanish" aria-selected="false" aria-controls="quest-questions" data-quest-category="spanish" tabindex="-1">Español</button>
+      </div>
+      <div class="chat-questions" id="quest-questions" role="tabpanel" aria-labelledby="tab-hiking"></div>
+      <div class="chat-messages" id="chat-messages" role="log" aria-live="polite" aria-relevant="additions"></div>
+      <form class="chat-form" id="chat-form">
+        <label class="visually-hidden" for="chat-input">Escribe tu pregunta</label>
+        <textarea id="chat-input" name="message" rows="2" maxlength="1000" placeholder="Pregunta sobre programación, videojuegos o rutas..." required></textarea>
+        <button type="submit" aria-label="Enviar mensaje">Enviar</button>
+      </form>
+      <p class="chat-privacy">Las preguntas sugeridas se responden aquí; los mensajes escritos se envían a OpenAI. No incluyas datos personales.</p>
+      <p class="chat-status" id="chat-status" aria-live="polite"></p>
+    </div>
+    <button class="chat-toggle" type="button" aria-expanded="false" aria-controls="chat-panel">
+      <span aria-hidden="true">✦</span> <span class="chat-toggle-label">HABLAR CON EL ASISTENTE</span>
+    </button>
+  </section>
 </body>
 </html>

@@ -1,0 +1,3 @@
+[build]
+  publish = "aboubakre_portfolio"
+  functions = "aboubakre_portfolio/netlify/functions"

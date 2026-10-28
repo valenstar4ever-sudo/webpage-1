@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Un diario visual de vanlife: carreteras, paisajes y una ruta soñada entre España y Marruecos.">
+  <meta name="theme-color" content="#171914">
+  <title>Vanlife — La vida que cabe en una furgo | Aboubakre Azzabi</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;800&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styleold.css">
+  <link rel="stylesheet" href="vanlife.css">
+  <script src="script.js" defer></script>
+</head>
+<body class="vanlife-page">
+  <a class="skip-link" href="#vanlife-content">Saltar al contenido</a>
+  <header class="vanlife-hero" id="vanlife-top">
+    <img class="vanlife-hero-image" src="images/vanlife/vanlife-coast-header.jpeg" alt="Vista de la costa desde el interior de la furgoneta">
+    <div class="vanlife-hero-shade"></div>
+    <nav class="navigation vanlife-navigation" aria-label="Navegación Vanlife">
+      <a class="logo" href="index.html" aria-label="Volver al portfolio de Aboubakre">AA<span>.</span></a>
+      <button class="menu-toggle" aria-expanded="false" aria-controls="vanlife-nav-links" aria-label="Abrir menú"><span></span><span></span></button>
+      <ul class="nav-links" id="vanlife-nav-links">
+        <li><a href="index.html">PORTFOLIO</a></li>
+        <li><a href="#ruta-virtual">LA RUTA</a></li>
+        <li><a href="#postales">POSTALES</a></li>
+      </ul>
+    </nav>
+    <div class="vanlife-hero-copy">
+      <p class="vanlife-kicker"><span></span> CUADERNO DE RUTA · ESPAÑA ↔ MARRUECOS</p>
+      <h1>VANLIFE<span>:</span><br><em>la vida que cabe</em><br>en una furgo</h1>
+      <p>Un hogar pequeño. Un horizonte inmenso. Kilómetros para perderse un poco y encontrarse mucho.</p>
+      <a class="vanlife-cta" href="#ruta-virtual">ABRIR EL MAPA <span aria-hidden="true">↓</span></a>
+    </div>
+    <div class="vanlife-hero-note">LIBERTAD EN MOVIMIENTO <span>·</span> 36° 00' N / 05° 36' W</div>
+    <a class="vanlife-back" href="index.html">← VOLVER AL PORTFOLIO</a>
+  </header>
+
+  <main id="vanlife-content">
+    <section class="vanlife-intro">
+      <span class="vanlife-overline">01 / EL ESPÍRITU</span>
+      <div>
+        <h2>La carretera también puede ser <em>casa.</em></h2>
+        <p>Ventanas abiertas al Atlántico, caminos que cambian de color y la calma de viajar sin prisa. Este diario reúne fotos de carretera y una ruta inspiradora entre España y Marruecos: una invitación a descubrir paisajes, no un itinerario en tiempo real.</p>
+      </div>
+      <span class="vanlife-stamp" aria-hidden="true">GO<br>WHERE<br>YOU<br>GROW</span>
+    </section>
+
+    <section class="vanlife-map-section section" id="ruta-virtual">
+      <div class="section-heading reveal"><span class="section-number">02 / VIAJE EN SOLITARIO</span><h2>Mi viaje en solitario</h2><p>Un viaje en solitario, ciudad a ciudad. Selecciona un punto para ver su foto.</p></div>
+      <div class="map-layout reveal">
+        <div class="adventure-map" role="group" aria-label="Mapa de Europa y Marruecos con nueve destinos de un viaje en solitario">
+          <img class="map-image" src="images/solo-travel-map.png" alt="Mapa ilustrado de Europa y Marruecos">
+          <svg class="map-route" viewBox="0 0 1000 666.67" preserveAspectRatio="none" aria-hidden="true">
+            <path class="route-shadow" d="M192 574 C228 566 267 550 297 550 S322 556 327 559 C315 517 295 463 291 424 C279 432 262 442 256 447 C335 437 430 410 513 397 C471 370 416 333 379 319 C398 317 414 315 421 315 C443 290 466 251 490 235"/>
+            <path class="route-line" d="M192 574 C228 566 267 550 297 550 S322 556 327 559 C315 517 295 463 291 424 C279 432 262 442 256 447 C335 437 430 410 513 397 C471 370 416 333 379 319 C398 317 414 315 421 315 C443 290 466 251 490 235"/>
+          </svg>
+          <button class="map-marker" data-location="naples" style="--pin-x:51.3%;--pin-y:59.5%" aria-label="Nápoles, Italia" aria-expanded="false" aria-controls="photo-naples">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">NÁPOLES</span>
+            <span class="map-popup" id="photo-naples" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/naples.jpg" alt="Foto de Nápoles, Italia"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/naples.jpg</small></span></span><span class="popup-caption">Nápoles <small>Italia</small></span></span>
+          </button>
+          <button class="map-marker" data-location="paris" style="--pin-x:37.8%;--pin-y:48%" aria-label="París, Francia" aria-expanded="false" aria-controls="photo-paris">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">PARÍS</span>
+            <span class="map-popup" id="photo-paris" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/paris.jpg" alt="Foto de París, Francia"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/paris.jpg</small></span></span><span class="popup-caption">París <small>Francia</small></span></span>
+          </button>
+          <button class="map-marker" data-location="strasbourg" style="--pin-x:42.1%;--pin-y:47.3%" aria-label="Estrasburgo, Francia" aria-expanded="false" aria-controls="photo-strasbourg">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">ESTRASBURGO</span>
+            <span class="map-popup" id="photo-strasbourg" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/strasbourg.jpg" alt="Foto de Estrasburgo, Francia"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/strasbourg.jpg</small></span></span><span class="popup-caption">Estrasburgo <small>Francia</small></span></span>
+          </button>
+          <button class="map-marker" data-location="hamburg" style="--pin-x:48.9%;--pin-y:35.2%" aria-label="Hamburgo, Alemania" aria-expanded="false" aria-controls="photo-hamburg">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">HAMBURGO</span>
+            <span class="map-popup" id="photo-hamburg" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/hamburg.jpg" alt="Foto de Hamburgo, Alemania"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/hamburg.jpg</small></span></span><span class="popup-caption">Hamburgo <small>Alemania</small></span></span>
+          </button>
+          <button class="map-marker" data-location="valencia" style="--pin-x:25.6%;--pin-y:67%" aria-label="Valencia, España" aria-expanded="false" aria-controls="photo-valencia">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">VALENCIA</span>
+            <span class="map-popup" id="photo-valencia" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/valencia.jpg" alt="Foto de Valencia, España"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/valencia.jpg</small></span></span><span class="popup-caption">Valencia <small>España</small></span></span>
+          </button>
+          <button class="map-marker" data-location="barcelona" style="--pin-x:29%;--pin-y:63.2%" aria-label="Barcelona, España" aria-expanded="false" aria-controls="photo-barcelona">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">BARCELONA</span>
+            <span class="map-popup" id="photo-barcelona" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/barcelona.jpg" alt="Foto de Barcelona, España"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/barcelona.jpg</small></span></span><span class="popup-caption">Barcelona <small>España</small></span></span>
+          </button>
+          <button class="map-marker" data-location="essaouira" style="--pin-x:19.2%;--pin-y:86.1%" aria-label="Essaouira, Marruecos" aria-expanded="false" aria-controls="photo-essaouira">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">ESSAOUIRA</span>
+            <span class="map-popup" id="photo-essaouira" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/essaouira.jpg" alt="Foto de Essaouira, Marruecos"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/essaouira.jpg</small></span></span><span class="popup-caption">Essaouira <small>Marruecos</small></span></span>
+          </button>
+          <button class="map-marker" data-location="meknes" style="--pin-x:29.7%;--pin-y:82.5%" aria-label="Meknes, Marruecos" aria-expanded="false" aria-controls="photo-meknes">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">MEKNES</span>
+            <span class="map-popup" id="photo-meknes" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/meknes.jpg" alt="Foto de Meknes, Marruecos"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/meknes.jpg</small></span></span><span class="popup-caption">Meknes <small>Marruecos</small></span></span>
+          </button>
+          <button class="map-marker" data-location="ifrane" style="--pin-x:32.7%;--pin-y:83.8%" aria-label="Ifrane, Marruecos" aria-expanded="false" aria-controls="photo-ifrane">
+            <span class="pin" aria-hidden="true"></span><span class="marker-label">IFRANE</span>
+            <span class="map-popup" id="photo-ifrane" hidden><span class="photo-frame"><img class="place-photo" data-src="images/travel-photos/ifrane.jpg" alt="Foto de Ifrane, Marruecos"><span class="photo-placeholder">FOTO PRÓXIMAMENTE<small>images/travel-photos/ifrane.jpg</small></span></span><span class="popup-caption">Ifrane <small>Marruecos</small></span></span>
+          </button>
+          <div class="map-legend"><span aria-hidden="true">✦</span> RUTA EN SOLITARIO</div>
+        </div>
+        <aside class="map-info">
+          <span class="small-label">DIARIO DE VIAJE</span><h3>Destinos visitados</h3><p class="map-hint">Toca un lugar en el mapa o en la lista para ver su foto. Añade tus imágenes a <code>images/travel-photos/</code>.</p>
+          <div class="interest-list">
+            <button class="interest-item" data-location="naples"><span class="interest-icon">01</span><span><b>Nápoles</b><small>Italia</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="paris"><span class="interest-icon">02</span><span><b>París</b><small>Francia</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="strasbourg"><span class="interest-icon">03</span><span><b>Estrasburgo</b><small>Francia</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="hamburg"><span class="interest-icon">04</span><span><b>Hamburgo</b><small>Alemania</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="valencia"><span class="interest-icon">05</span><span><b>Valencia</b><small>España</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="barcelona"><span class="interest-icon">06</span><span><b>Barcelona</b><small>España</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="essaouira"><span class="interest-icon">07</span><span><b>Essaouira</b><small>Marruecos</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="meknes"><span class="interest-icon">08</span><span><b>Meknes</b><small>Marruecos</small></span><span class="item-arrow">↗</span></button>
+            <button class="interest-item" data-location="ifrane"><span class="interest-icon">09</span><span><b>Ifrane</b><small>Marruecos</small></span><span class="item-arrow">↗</span></button>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <section class="vanlife-gallery" id="postales">
+      <div class="vanlife-section-heading gallery-heading">
+        <span class="vanlife-overline">03 / POSTALES DE CARRETERA</span>
+        <h2>Pequeñas ventanas.<br><em>Grandes horizontes.</em></h2>
+        <p>Momentos capturados en las fotos del viaje: la furgo, el paisaje y esa luz que invita a seguir.</p>
+      </div>
+      <div class="postcard-grid">
+        <figure class="postcard postcard-feature">
+          <img src="images/vanlife/vanlife-roadtrip-postcard.jpeg" alt="Vista desde el interior de la furgoneta hacia la costa" loading="lazy">
+          <figcaption><span>01 — LA COMPAÑERA DE RUTA</span><b>Una furgo, mil posibilidades.</b></figcaption>
+        </figure>
+        <figure class="postcard postcard-coast">
+          <img src="images/vanlife/vanlife-coast-view.jpeg" alt="Vista de la costa desde el interior de una furgoneta" loading="lazy">
+          <figcaption><span>02 — DESPERTAR CON EL MAR</span><b>El mejor salón tiene horizonte.</b></figcaption>
+        </figure>
+        <figure class="postcard postcard-hills">
+          <img src="images/vanlife/morocco-highlands.jpeg" alt="Paisaje de colinas y campos desde la carretera" loading="lazy">
+          <figcaption><span>03 — RUMBO A LO DESCONOCIDO</span><b>Dejar que el camino sorprenda.</b></figcaption>
+        </figure>
+        <figure class="postcard postcard-sunset">
+          <img src="images/vanlife/roadtrip-final.jpeg" alt="Retrato artístico del viajero al volante de una furgoneta en una ciudad costera al atardecer" loading="lazy">
+          <figcaption><span>04 — ÚLTIMA LUZ</span><b>Que nunca falte un buen atardecer.</b></figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="vanlife-manifesto">
+      <span class="vanlife-overline">04 / UNA FORMA DE VIAJAR</span>
+      <h2>Menos prisa.<br><em>Más vida entre destinos.</em></h2>
+      <p>Respeta los lugares, duerme donde esté permitido, apoya a los comercios locales y deja cada paisaje mejor de como lo encontraste.</p>
+      <a href="index.html" class="vanlife-cta">VOLVER A LA AVENTURA <span aria-hidden="true">↗</span></a>
+    </section>
+  </main>
+  <footer class="vanlife-footer">
+    <a class="footer-logo" href="index.html">AA<span>.</span></a>
+    <p>UN CUADERNO DE RUTA DE ABOUBAKRE AZZABI</p>
+    <a href="#vanlife-top">VOLVER ARRIBA ↑</a>
+  </footer>
+</body>
+</html>
