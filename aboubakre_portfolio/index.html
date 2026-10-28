@@ -39,6 +39,41 @@
   </header>
 
   <main id="contenido">
+    <section class="weather-section" id="tiempo" aria-labelledby="weather-title">
+      <div class="weather-journal">
+        <div class="weather-heading">
+          <div>
+            <span class="section-number">FIELD REPORT / 00<span id="weather-report-number">1</span></span>
+            <h2 id="weather-title">El tiempo en tu ruta</h2>
+            <p class="weather-location" id="weather-location">Valencia, España · Pronóstico actual</p>
+          </div>
+          <div class="weather-actions">
+            <button class="weather-location-button" id="weather-location-button" type="button">USAR MI UBICACIÓN</button>
+            <button class="weather-refresh-button" id="weather-refresh-button" type="button" aria-label="Actualizar el tiempo"><span aria-hidden="true">↻</span><span>ACTUALIZAR</span></button>
+          </div>
+        </div>
+        <div class="weather-current" id="weather-current" aria-busy="true">
+          <div class="weather-condition">
+            <span class="weather-symbol" id="weather-symbol" aria-hidden="true">◌</span>
+            <div><p class="weather-temperature"><span id="weather-temperature">--</span><span class="weather-degree">°</span></p><p class="weather-summary" id="weather-summary">Consultando el cielo…</p></div>
+          </div>
+          <dl class="weather-details">
+            <div><dt>SENSACIÓN</dt><dd id="weather-feels-like">—</dd></div>
+            <div><dt>VIENTO</dt><dd id="weather-wind">—</dd></div>
+            <div><dt>HUMEDAD</dt><dd id="weather-humidity">—</dd></div>
+          </dl>
+        </div>
+        <div class="weather-forecast" id="weather-forecast" role="list" aria-label="Pronóstico para los próximos días">
+          <p class="weather-loading">Preparando el pronóstico…</p>
+        </div>
+        <p class="weather-status" id="weather-status" role="status" aria-live="polite"></p>
+        <div class="weather-footnote">
+          <span>Pronóstico orientativo · Comprueba las condiciones antes de salir. Tu ubicación solo se comparte si la solicitas.</span>
+          <span>Datos: <a href="https://open-meteo.com/" target="_blank" rel="noopener noreferrer">Open-Meteo</a></span>
+        </div>
+      </div>
+    </section>
+
     <section class="about section" id="sobre-mi">
       <div class="section-heading reveal"><span class="section-number">01 / IDENTIDAD</span><h2>Sobre mí</h2><p>El comienzo de mi historia</p></div>
       <div class="about-content">

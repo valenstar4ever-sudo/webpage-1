@@ -2,6 +2,224 @@
 (() => {
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
 
+  const weatherCurrent = document.getElementById("weather-current");
+  const weatherForecast = document.getElementById("weather-forecast");
+  const weatherStatus = document.getElementById("weather-status");
+  const weatherLocation = document.getElementById("weather-location");
+  const weatherTemperature = document.getElementById("weather-temperature");
+  const weatherSummary = document.getElementById("weather-summary");
+  const weatherSymbol = document.getElementById("weather-symbol");
+  const weatherFeelsLike = document.getElementById("weather-feels-like");
+  const weatherWind = document.getElementById("weather-wind");
+  const weatherHumidity = document.getElementById("weather-humidity");
+  const weatherRefresh = document.getElementById("weather-refresh-button");
+  const weatherLocate = document.getElementById("weather-location-button");
+  const weatherReportNumber = document.getElementById("weather-report-number");
+  let weatherCoordinates = { latitude: 39.4699, longitude: -0.3763 };
+  let weatherPlaceName = "Valencia, España";
+  let weatherRequestController;
+  let hasWeatherData = false;
+
+  const weatherDescriptions = {
+    0: ["Despejado", "☀"],
+    1: ["Mayormente despejado", "◐"],
+    2: ["Parcialmente nublado", "◑"],
+    3: ["Nublado", "☁"],
+    45: ["Niebla", "≋"],
+    48: ["Niebla helada", "≋"],
+    51: ["Llovizna ligera", "☂"],
+    53: ["Llovizna moderada", "☂"],
+    55: ["Llovizna intensa", "☂"],
+    56: ["Llovizna helada ligera", "❄"],
+    57: ["Llovizna helada intensa", "❄"],
+    61: ["Lluvia ligera", "☂"],
+    63: ["Lluvia moderada", "☂"],
+    65: ["Lluvia intensa", "☂"],
+    66: ["Lluvia helada ligera", "❄"],
+    67: ["Lluvia helada intensa", "❄"],
+    71: ["Nieve ligera", "❄"],
+    73: ["Nieve moderada", "❄"],
+    75: ["Nieve intensa", "❄"],
+    77: ["Granos de nieve", "❄"],
+    80: ["Chubascos ligeros", "☂"],
+    81: ["Chubascos moderados", "☂"],
+    82: ["Chubascos intensos", "☂"],
+    85: ["Chubascos de nieve ligeros", "❄"],
+    86: ["Chubascos de nieve intensos", "❄"],
+    95: ["Tormenta", "⚡"],
+    96: ["Tormenta con granizo ligero", "⚡"],
+    98: ["Tormenta intensa", "⚡"],
+    99: ["Tormenta con granizo intenso", "⚡"]
+  };
+
+  function getWeatherDescription(code) {
+    return weatherDescriptions[code] || ["Condiciones variables", "◌"];
+  }
+
+  if (weatherCurrent && weatherForecast && weatherStatus && weatherRefresh && weatherLocate) {
+    const formatTemperature = value => `${Math.round(value)}°`;
+
+    function renderWeather(data) {
+      const current = data.current;
+      const description = getWeatherDescription(current.weather_code);
+      weatherTemperature.textContent = Math.round(current.temperature_2m);
+      weatherSummary.textContent = description[0];
+      weatherSymbol.textContent = description[1];
+      weatherFeelsLike.textContent = formatTemperature(current.apparent_temperature);
+      weatherWind.textContent = `${Math.round(current.wind_speed_10m)} ${data.current_units.wind_speed_10m}`;
+      weatherHumidity.textContent = `${Math.round(current.relative_humidity_2m)}%`;
+      weatherLocation.textContent = `${weatherPlaceName} · Actualizado ${new Intl.DateTimeFormat("es-ES", {
+        hour: "2-digit",
+        minute: "2-digit",
+        timeZone: data.timezone
+      }).format(new Date(current.time))}`;
+
+      const dayFormatter = new Intl.DateTimeFormat("es-ES", {
+        weekday: "short",
+        timeZone: data.timezone
+      });
+      weatherForecast.replaceChildren();
+
+      data.daily.time.slice(1, 4).forEach((date, index) => {
+        const code = data.daily.weather_code[index + 1];
+        const forecastDescription = getWeatherDescription(code);
+        const day = document.createElement("div");
+        day.className = "weather-day";
+        day.setAttribute("role", "listitem");
+
+        const name = document.createElement("span");
+        name.className = "weather-day-name";
+        name.textContent = dayFormatter.format(new Date(`${date}T12:00:00`)).replace(".", "");
+
+        const icon = document.createElement("span");
+        icon.className = "weather-day-symbol";
+        icon.setAttribute("aria-hidden", "true");
+        icon.textContent = forecastDescription[1];
+
+        const temperatures = document.createElement("span");
+        temperatures.className = "weather-day-temperatures";
+        temperatures.textContent = `${Math.round(data.daily.temperature_2m_max[index + 1])}° / ${Math.round(data.daily.temperature_2m_min[index + 1])}°`;
+
+        const accessibleDescription = document.createElement("span");
+        accessibleDescription.className = "visually-hidden";
+        accessibleDescription.textContent = forecastDescription[0];
+
+        day.append(name, icon, temperatures, accessibleDescription);
+        weatherForecast.append(day);
+      });
+
+      weatherCurrent.setAttribute("aria-busy", "false");
+      weatherStatus.textContent = "";
+      hasWeatherData = true;
+      weatherRefresh.disabled = false;
+      weatherLocate.disabled = false;
+      weatherReportNumber.textContent = String(new Date().getDate()).padStart(2, "0");
+    }
+
+    async function loadWeather() {
+      weatherRequestController?.abort();
+      weatherRequestController = new AbortController();
+      const requestController = weatherRequestController;
+      const timeout = window.setTimeout(() => requestController.abort(), 12000);
+      const params = new URLSearchParams({
+        latitude: weatherCoordinates.latitude,
+        longitude: weatherCoordinates.longitude,
+        current: "temperature_2m,relative_humidity_2m,apparent_temperature,is_day,precipitation,weather_code,wind_speed_10m",
+        daily: "weather_code,temperature_2m_max,temperature_2m_min",
+        timezone: "auto",
+        forecast_days: "4"
+      });
+
+      weatherCurrent.setAttribute("aria-busy", "true");
+      weatherStatus.textContent = "Consultando el pronóstico…";
+      weatherRefresh.disabled = true;
+      weatherLocate.disabled = true;
+
+      try {
+        const response = await fetch(`https://api.open-meteo.com/v1/forecast?${params}`, {
+          signal: requestController.signal,
+          headers: { Accept: "application/json" }
+        });
+        if (!response.ok) throw new Error(`Forecast service returned ${response.status}`);
+        const data = await response.json();
+
+        if (
+          !data.current ||
+          !data.daily ||
+          !Array.isArray(data.daily.time) ||
+          data.daily.time.length < 4 ||
+          !Array.isArray(data.daily.weather_code) ||
+          !Array.isArray(data.daily.temperature_2m_max) ||
+          !Array.isArray(data.daily.temperature_2m_min) ||
+          data.daily.weather_code.length < 4 ||
+          data.daily.temperature_2m_max.length < 4 ||
+          data.daily.temperature_2m_min.length < 4 ||
+          !Number.isFinite(data.current.temperature_2m) ||
+          !Number.isFinite(data.current.apparent_temperature) ||
+          !Number.isFinite(data.current.wind_speed_10m) ||
+          !Number.isFinite(data.current.relative_humidity_2m) ||
+          !Number.isFinite(data.current.weather_code) ||
+          data.daily.weather_code.slice(0, 4).some(value => !Number.isFinite(value)) ||
+          data.daily.temperature_2m_max.slice(0, 4).some(value => !Number.isFinite(value)) ||
+          data.daily.temperature_2m_min.slice(0, 4).some(value => !Number.isFinite(value))
+        ) {
+          throw new Error("Forecast service returned incomplete data");
+        }
+
+        renderWeather(data);
+      } catch (error) {
+        if (error.name === "AbortError" && requestController !== weatherRequestController) return;
+        weatherCurrent.setAttribute("aria-busy", "false");
+        if (!hasWeatherData) {
+          weatherSummary.textContent = "Pronóstico no disponible";
+          weatherForecast.textContent = "No hay datos del pronóstico en este momento.";
+        }
+        weatherStatus.textContent = error.name === "AbortError"
+          ? "El pronóstico está tardando demasiado. Comprueba tu conexión e inténtalo de nuevo."
+          : "No se pudo cargar el tiempo. Comprueba tu conexión e inténtalo de nuevo.";
+        weatherRefresh.disabled = false;
+        weatherLocate.disabled = false;
+        console.error("Weather request failed.", error);
+      } finally {
+        window.clearTimeout(timeout);
+      }
+    }
+
+    weatherRefresh.addEventListener("click", loadWeather);
+    weatherLocate.addEventListener("click", () => {
+      if (!navigator.geolocation) {
+        weatherStatus.textContent = "Tu navegador no permite consultar la ubicación. Se mantiene el pronóstico de Valencia.";
+        return;
+      }
+
+      weatherLocate.disabled = true;
+      weatherStatus.textContent = "Solicitando tu ubicación…";
+      navigator.geolocation.getCurrentPosition(
+        position => {
+          weatherCoordinates = {
+            latitude: position.coords.latitude,
+            longitude: position.coords.longitude
+          };
+          weatherPlaceName = "Tu ubicación";
+          loadWeather();
+        },
+        error => {
+          weatherLocate.disabled = false;
+          if (error.code === error.PERMISSION_DENIED) {
+            weatherStatus.textContent = "No se concedió el permiso de ubicación. Se mantiene Valencia; puedes cambiarlo en los ajustes del navegador.";
+          } else if (error.code === error.TIMEOUT) {
+            weatherStatus.textContent = "No se pudo obtener la ubicación a tiempo. Prueba de nuevo o consulta Valencia.";
+          } else {
+            weatherStatus.textContent = "No se pudo obtener la ubicación. Se mantiene el pronóstico de Valencia.";
+          }
+        },
+        { enableHighAccuracy: false, maximumAge: 300000, timeout: 10000 }
+      );
+    });
+
+    loadWeather();
+  }
+
   // Menú móvil accesible
   const menuButton = document.querySelector(".menu-toggle");
   const navLinks = document.querySelector(".nav-links");
